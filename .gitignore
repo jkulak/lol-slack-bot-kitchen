@@ -1,0 +1,7 @@
+/cookbooks/
+hosts.json
+/.vagrant
+/data_bags/users/*.json
+/nodes/*.json
+_CHEATSHEET
+environments/*.json
