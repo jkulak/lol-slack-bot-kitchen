@@ -29,3 +29,12 @@ Usage `sudo service mongod start|stop|status`
 
 Connect to server using mongo client
 * `$ mongo`
+
+
+## PM2
+
+* Start process management: `$ pm2 start process.json`
+* View monitoring: `$ pm2 monit`
+* Stop process: `$ pm2 stop PROCES_ID`
+* List running processes: `$ pm2 list`
+* View logs: `$ pm2 logs PROCES_ID`
