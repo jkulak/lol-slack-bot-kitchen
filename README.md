@@ -15,3 +15,17 @@ vagrant up
 ```
 
 And your system is up and running and available at: 192.168.3.26
+
+## MongoDB3
+
+Version: 3.2.8
+
+Files location
+* service: `/etc/init/mongod.conf`
+* configuration: `/etc/mongodb.conf`
+* log: `/var/log/mongodb/mongodb.log`
+
+Usage `sudo service mongodb start|stop|status`
+
+Connect to server using mongo client
+* `$ mongo`
