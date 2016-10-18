@@ -19,8 +19,10 @@
 
 include_recipe 'jku-common::default'
 include_recipe 'jku-cookbook-wrappers::nodejs'
-include_recipe 'jku-cookbook-wrappers::nodejs_development'
 include_recipe 'mongodb3::default'
+
+# Process manager for Node.js
+nodejs_npm "pm2"
 
 user node['jku-lol-slack-bot']['user'] do
   comment "#{node['jku-lol-slack-bot']['user']} user"
