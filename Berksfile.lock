@@ -6,13 +6,11 @@ DEPENDENCIES
     revision: 329209f0128f9819033c4777c76b7d0dcae81dcc
   jku-cookbook-wrappers
     git: https://github.com/jkulak/jku-cookbook-wrappers.git
-    revision: b32de95295c34fb89ec697197fb02a93b7f6a7db
+    revision: c57f2903d0aedf78fccfa20b092b9ce283a1ecf7
   jku-lol-slack-bot
     path: site-cookbooks/jku-lol-slack-bot
   locale (~> 1.1.0)
-  mongodb
-    git: https://github.com/chef-brigade/mongodb-cookbook
-    revision: 3f4386e03997142afc1af014f54b40dc86f18309
+  mongodb3 (~> 5.3.0)
   mysql (~> 8.0.2)
   mysql2_chef_gem (~> 1.1.0)
   nodejs (~> 2.4.4)
@@ -48,18 +46,18 @@ GRAPH
     magic_shell (~> 1.0.0)
     sudo (~> 2.7.2)
     user (~> 0.4.2)
-  jku-cookbook-wrappers (0.1.2)
+  jku-cookbook-wrappers (0.1.3)
     apache2 (~> 3.2.2)
     database (~> 5.1.2)
     jku-common (~> 0.1.1)
     locale (~> 1.1.0)
-    mongodb (~> 0.16.3)
     mysql (~> 8.0.2)
     mysql2_chef_gem (~> 1.1.0)
     nodejs (~> 2.4.4)
     php (~> 1.10.1)
   jku-lol-slack-bot (0.1.0)
-    jku-cookbook-wrappers (~> 0.1.1)
+    jku-cookbook-wrappers (~> 0.1.3)
+    mongodb3 (~> 5.3.0)
   locale (1.1.0)
   magic_shell (1.0.0)
   mariadb (0.3.1)
@@ -69,10 +67,11 @@ GRAPH
   mingw (1.2.4)
     compat_resource (>= 0.0.0)
     seven_zip (>= 0.0.0)
-  mongodb (0.16.3)
-    apt (>= 1.8.2)
-    python (>= 0.0.0)
-    yum (>= 3.0.0)
+  mongodb3 (5.3.0)
+    apt (>= 0.0.0)
+    runit (~> 1.7.0)
+    user (>= 0.0.0)
+    yum (>= 0.0.0)
   mysql (8.0.4)
   mysql2_chef_gem (1.1.0)
     build-essential (>= 0.0.0)
@@ -85,6 +84,7 @@ GRAPH
     homebrew (>= 0.0.0)
     yum-epel (>= 0.0.0)
   openssl (6.0.0)
+  packagecloud (0.2.5)
   php (1.10.1)
     build-essential (>= 0.0.0)
     iis (>= 0.0.0)
@@ -96,9 +96,8 @@ GRAPH
     apt (>= 1.9.0)
     build-essential (>= 0.0.0)
     openssl (>= 0.0.0)
-  python (1.4.6)
-    build-essential (>= 0.0.0)
-    yum-epel (>= 0.0.0)
+  runit (1.7.8)
+    packagecloud (>= 0.0.0)
   seven_zip (2.0.2)
     windows (>= 1.2.2)
   sudo (2.7.2)

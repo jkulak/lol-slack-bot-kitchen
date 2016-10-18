@@ -20,17 +20,7 @@
 include_recipe 'jku-common::default'
 include_recipe 'jku-cookbook-wrappers::nodejs'
 include_recipe 'jku-cookbook-wrappers::nodejs_development'
-
-# Install nodejs requirements for the project
-# nodejs_npm "mongodb"
-# nodejs_npm "express-generator"
-# nodejs_npm "yo"
-
-# gem_package "sass"
-# nodejs_npm "gulp-cli"
-# nodejs_npm "gulp"
-# nodejs_npm "webpack"
-# nodejs_npm "hjs-webpack"
+include_recipe 'mongodb3::default'
 
 user node['jku-lol-slack-bot']['user'] do
   comment "#{node['jku-lol-slack-bot']['user']} user"
