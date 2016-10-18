@@ -22,10 +22,10 @@ Version: 3.2.8
 
 Files location
 * service: `/etc/init/mongod.conf`
-* configuration: `/etc/mongodb.conf`
+* configuration: `/etc/mongod.conf`
 * log: `/var/log/mongodb/mongodb.log`
 
-Usage `sudo service mongodb start|stop|status`
+Usage `sudo service mongod start|stop|status`
 
 Connect to server using mongo client
 * `$ mongo`
