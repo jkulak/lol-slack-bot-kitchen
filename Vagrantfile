@@ -50,7 +50,9 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder ".", "/vagrant", disabled: true
   # Sync code directories
   # config.vm.synced_folder "../example.com.dev",   "/code/example.com.dev"
-  config.vm.synced_folder "../lol-slack-bot",   "/mnt/host/mount_dir"
+  config.vm.synced_folder "../lol-slack-bot",   "/mnt/host/mount_dir", type: "nfs"
+  config.nfs.map_uid = Process.uid
+  config.nfs.map_gid = Process.gid
 
   # Configure provisioning
   config.vm.provision "chef_solo" do |chef|
