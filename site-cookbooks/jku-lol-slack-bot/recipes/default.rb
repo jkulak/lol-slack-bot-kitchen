@@ -23,6 +23,8 @@ include_recipe 'mongodb3::default'
 
 # Process manager for Node.js
 nodejs_npm "pm2"
+# The streaming build system 
+nodejs_npm "gulp-cli"
 
 user node['jku-lol-slack-bot']['user'] do
   comment "#{node['jku-lol-slack-bot']['user']} user"
