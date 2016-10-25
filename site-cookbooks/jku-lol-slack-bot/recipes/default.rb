@@ -23,42 +23,18 @@ include_recipe 'mongodb3::default'
 
 # Process manager for Node.js
 nodejs_npm "pm2"
-# The streaming build system 
+# The streaming build system
 nodejs_npm "gulp-cli"
 
-user node['jku-lol-slack-bot']['user'] do
-  comment "#{node['jku-lol-slack-bot']['user']} user"
-  home "/home/#{node['jku-lol-slack-bot']['user']}"
-  shell '/bin/bash'
-end
-
-group node['jku-lol-slack-bot']['group'] do
-  action :modify
-  members [node['jku-lol-slack-bot']['user']]
-  append true
-end
-
 # Create main vhost directory
-directory "/var/www" do
+directory "#{node['jku-lol-slack-bot']['home']}/www" do
     action :create
-    user node['apache']['user']
-    group node['apache']['group']
-    not_if { ::File.exists?("/var/www") }
+    not_if { ::File.exists?("#{node['jku-lol-slack-bot']['home']}/www") }
 end
 
 # Create versioned directory structure
 versioned_dir_structure node['jku-lol-slack-bot']['vhost'] do
-    docroot_dir node['apache']['docroot_dir']
-    user node['apache']['user']
-    group node['apache']['group']
-end
-
-# Create Apache2 vhost
-web_app node['jku-lol-slack-bot']['vhost'] do
-    server_name node['jku-lol-slack-bot']['vhost']
-    docroot "#{node['apache']['docroot_dir']}/#{node['jku-lol-slack-bot']['vhost']}/www"
-    cookbook 'apache2'
-    user node['apache']['user']
-    group node['apache']['group']
-    directory_options '+Indexes'
+    docroot_dir "#{node['jku-lol-slack-bot']['home']}/www"
+    user node['jku-lol-slack-bot']['user']
+    group node['jku-lol-slack-bot']['user']
 end

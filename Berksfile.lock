@@ -1,6 +1,4 @@
 DEPENDENCIES
-  apache2 (~> 3.2.2)
-  database (~> 5.1.2)
   jku-common
     git: https://github.com/jkulak/jku-common.git
     revision: 329209f0128f9819033c4777c76b7d0dcae81dcc
@@ -11,10 +9,6 @@ DEPENDENCIES
     path: site-cookbooks/jku-lol-slack-bot
   locale (~> 1.1.0)
   mongodb3 (~> 5.3.0)
-  mysql (~> 8.0.2)
-  mysql2_chef_gem (~> 1.1.0)
-  nodejs (~> 2.4.4)
-  php (~> 1.10.1)
 
 GRAPH
   apache2 (3.2.2)
@@ -28,7 +22,7 @@ GRAPH
     compat_resource (>= 12.14)
     mingw (>= 1.1)
     seven_zip (>= 0.0.0)
-  compat_resource (12.14.7)
+  compat_resource (12.16.1)
   database (5.1.2)
     postgresql (>= 1.0.0)
   dmg (3.0.0)
@@ -55,7 +49,8 @@ GRAPH
     mysql2_chef_gem (~> 1.1.0)
     nodejs (~> 2.4.4)
     php (~> 1.10.1)
-  jku-lol-slack-bot (0.1.0)
+  jku-lol-slack-bot (0.1.1)
+    jku-common (~> 0.1.1)
     jku-cookbook-wrappers (~> 0.1.3)
     mongodb3 (~> 5.3.0)
   locale (1.1.0)
@@ -105,6 +100,6 @@ GRAPH
   windows (2.0.2)
   xml (3.0.0)
     build-essential (>= 0.0.0)
-  yum (4.0.0)
-  yum-epel (1.0.1)
+  yum (4.1.0)
+  yum-epel (1.0.2)
     yum (>= 3.6)
