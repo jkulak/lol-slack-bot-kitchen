@@ -44,7 +44,7 @@ Vagrant.configure(2) do |config|
   config.vm.network :private_network, ip: "192.168.3.26"
 
   # Load configuration from Chef's local.json environment definition
-  config_json = JSON.parse(File.read("./hosts.json"))
+  # config_json = JSON.parse(File.read("./hosts.json"))
 
   # Don't sync current directory
   config.vm.synced_folder ".", "/vagrant", disabled: true
@@ -81,22 +81,22 @@ Vagrant.configure(2) do |config|
 
   # Enable vagrant-hostsupdater support, if the plugin is installed
   # see https://github.com/cogitatio/vagrant-hostsupdater for details
-  if Vagrant.has_plugin?("vagrant-hostsupdater")
-    config.hostsupdater.aliases = []
+  # if Vagrant.has_plugin?("vagrant-hostsupdater")
+    # config.hostsupdater.aliases = []
 
-    config_json["add_to_local_hosts"].each do |host|
+    # config_json["add_to_local_hosts"].each do |host|
 
-      config.hostsupdater.aliases.push(host)
+    #   config.hostsupdater.aliases.push(host)
       # if vhost["alias"]
       #   vhost["alias"].each do |alias_url|
       #     config.hostsupdater.aliases.push(alias_url)
       #   end
       # end
-    end
-  end
+    # end
+  # end
 
-  config.vm.provision "shell", privileged: false, inline: <<-EOF
-    echo "Welcome!"
-    # echo "Local server address is http://#{config_json["hosts"]}"
-  EOF
+  # config.vm.provision "shell", privileged: false, inline: <<-EOF
+  #   echo "Welcome!"
+  #   # echo "Local server address is http://#{config_json["hosts"]}"
+  # EOF
 end

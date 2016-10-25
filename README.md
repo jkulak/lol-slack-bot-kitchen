@@ -16,6 +16,19 @@ vagrant up
 
 And your system is up and running and available at: 192.168.3.26
 
+## Nginx
+
+Version: nginx/1.4.6 (Ubuntu)
+
+Files locations
+
+* service: `/etc/init.d/nginx`
+* configuration directory: `/etc/nginx/`
+* access log: `/var/log/nginx/acces.log`
+* error log: `/var/log/nginx/error.log`
+
+Usage `sudo service nginx start|stop|status`
+
 ## MongoDB3
 
 Version: 3.2.8
@@ -30,7 +43,6 @@ Usage `sudo service mongod start|stop|status`
 Connect to server using mongo client
 * `$ mongo`
 
-
 ## PM2
 
 * Start process management: `$ pm2 start process.json`
@@ -38,3 +50,4 @@ Connect to server using mongo client
 * Stop process: `$ pm2 stop PROCES_ID`
 * List running processes: `$ pm2 list`
 * View logs: `$ pm2 logs PROCES_ID`
+* View process details: `$ pm2 desc PROCES_ID`

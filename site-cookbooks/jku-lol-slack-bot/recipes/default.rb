@@ -21,6 +21,7 @@ include_recipe 'user::data_bag'
 include_recipe 'sudo'
 include_recipe 'git'
 include_recipe 'jku-lol-slack-bot::nodejs'
+include_recipe 'jku-lol-slack-bot::nginx'
 include_recipe 'mongodb3::default'
 
 # Define ll alias

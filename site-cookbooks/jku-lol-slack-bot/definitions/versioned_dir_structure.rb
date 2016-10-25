@@ -40,11 +40,13 @@ define :versioned_dir_structure, :docroot_dir => '/var/www' do
         group group
     end
 
-    # Create initial release repository
+    # Create initial release repository (initial might be a symlink due to deployment strategy,
+    # so we need to perform this not_if check)
     directory "#{docroot_dir}/#{dir}/releases/initial" do
         action :create
         user user
         group group
+    not_if { ::File.exists?("#{docroot_dir}/#{dir}/releases/initial") }
     end
 
     # Empty directory for /releases/previous symlink
