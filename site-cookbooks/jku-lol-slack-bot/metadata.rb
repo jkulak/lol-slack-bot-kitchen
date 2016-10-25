@@ -6,6 +6,9 @@ description      'Installs/Configures jku-lol-slack-bot'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.1.1'
 
-depends 'jku-cookbook-wrappers', '~> 0.1.3'
-depends 'jku-common', '~> 0.1.1'
-depends 'mongodb3', '~> 5.3.0'
+depends 'mongodb3',     '~> 5.3.0'
+depends 'user',         '~> 0.4.2'
+depends 'sudo',         '~> 2.7.2'
+depends 'magic_shell',  '~> 1.0.0'
+depends 'git',          '~> 4.5.0'
+depends 'nodejs',       '~> 2.4.4'
