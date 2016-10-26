@@ -24,11 +24,6 @@ include_recipe 'jku-lol-slack-bot::nodejs'
 include_recipe 'jku-lol-slack-bot::nginx'
 include_recipe 'mongodb3::default'
 
-# Define ll alias
-# magic_shell_alias 'll' do
-#   command 'ls -la'
-# end
-
 # Process manager for Node.js
 nodejs_npm "pm2"
 # The streaming build system
