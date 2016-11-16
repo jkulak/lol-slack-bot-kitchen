@@ -2,6 +2,7 @@
   "run_list": [
     "recipe[jku-local::default]"
   ],
+  "environment": "development",
   "automatic": {
     "ipaddress": "ip_here"
   }
